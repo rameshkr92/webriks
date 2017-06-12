@@ -133,7 +133,7 @@
           <!-- end: TOP BAR SOCIAL ICONS -->
         </div>
         <div class="col-sm-4">
-          <div class="social-icons">
+          <div class="social-icons1 profile-header">
             <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
               <!--<ul class="nav navbar-nav" ng-if="menu.shouldRender(authentication.user);">-->
                 <!--<li ng-repeat="item in menu.items | orderBy: 'position'" ng-if="item.shouldRender(authentication.user);" ng-switch="item.type" ng-class="{ active: $state.includes(item.state), dropdown: item.type === 'dropdown' }" class="{{item.class}}" dropdown="item.type === 'dropdown'">-->
@@ -147,16 +147,16 @@
                 <!--</li>-->
               <!--</ul>-->
               <ul class="nav navbar-nav navbar-right" ng-hide="authentication.user">
-                <li ui-sref-active="active" class="local-signup tooltips" data-original-title="Sign Up" data-placement="bottom">
+                <li ui-sref-active="active" class="local-signup tooltips top-header-auth" data-original-title="Sign Up" data-placement="bottom">
                   <a ui-sref="authentication.signup">Sign Up</a>
                 </li>
                 <li class="divider-vertical"></li>
-                <li ui-sref-active="active" class="local-signin tooltips" data-original-title="Sign In" data-placement="bottom">
+                <li ui-sref-active="active" class="local-signin tooltips top-header-auth" data-original-title="Sign In" data-placement="bottom">
                   <a ui-sref="authentication.signin">Sign In</a>
                 </li>
               </ul>
                 <ul class="nav navbar-nav navbar-right" ng-show="authentication.user">
-                    <li class="dropdown" dropdown>
+                    <li class="dropdown top-header-auth" dropdown>
                         <a class="dropdown-toggle user-header-dropdown-toggle" dropdown-toggle role="button">
                             <img ng-src="{{authentication.user.avatar}}" alt="{{authentication.user.username}}" class="header-profile-image" />
                             <span ng-bind="authentication.user.username"></span> <b class="caret"></b>

@@ -242,7 +242,8 @@ hr.fade-left {
 #topbar {
 	background: #FFFFFF;
 	border-bottom: 1px solid #EFEFEF;
-	font-size: 10px;
+	/*font-size: 10px;*/
+	font-size: 12px;
 	height: 40px;
 	position: absolute;
 	top: 0;
@@ -3036,4 +3037,16 @@ a:hover .header-profile-image {
 	padding-top: 11px !important;
 	padding-bottom: 11px !important;
 }
+/*.profile-header{*/
+	/*height: 40px;*/
+/*}*/
+.navbar-nav > .top-header-auth > a {
+	display: block;
+	height: 40px;
+	line-height: 40px;
+	margin-right: 40px;
+	padding-bottom: 0;
+	padding-top: 0;
+}
+
 /***Custom css by Ramesh***/
