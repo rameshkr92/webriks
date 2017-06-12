@@ -3003,3 +3003,37 @@ label {
 #style_selector .clear_style {
 	margin-right: 20px;
 }
+
+/***Custom css by Ramesh***/
+.social-icons ul li.local-signin a:before {
+	content: "\f090";
+}
+.social-icons ul li.local-signin a:after {
+	content: "\f090";
+	background: #48C4D2;
+}
+.social-icons ul li.local-signup a:before {
+	content: "\f055";
+}
+.social-icons ul li.local-signup a:after {
+	content: "\f055";
+	background: #48C4D2;
+}
+
+
+.header-profile-image {
+	opacity: 0.8;
+	height: 28px;
+	width: 28px;
+	border-radius: 50%;
+	margin-right: 5px;
+}
+.open .header-profile-image,
+a:hover .header-profile-image {
+	opacity: 1;
+}
+.user-header-dropdown-toggle {
+	padding-top: 11px !important;
+	padding-bottom: 11px !important;
+}
+/***Custom css by Ramesh***/

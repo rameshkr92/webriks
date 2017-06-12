@@ -1,6 +1,6 @@
 ﻿<!DOCTYPE html>
-<!--[if IE 8]><html class="ie8" lang="en"><![endif]-->
-<!--[if IE 9]><html class="ie9" lang="en"><![endif]-->
+<!--[if IE 8]><html class="ie8" lang="en" ng-strict-di ><![endif]-->
+<!--[if IE 9]><html class="ie9" lang="en" ng-strict-di ><![endif]-->
 <!--[if !IE]><!-->
 <head>
   <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
@@ -48,7 +48,7 @@
   <!--{% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}-->
 </head>
 
-<body class="">
+<body class="ng-cloak">
 <!-- start: HEADER -->
 <header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top"></header>
 <!-- end: HEADER -->
