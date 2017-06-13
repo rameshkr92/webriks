@@ -12,6 +12,8 @@ body {
 	direction: ltr;
 	font-family: 'Open+Sans', sans-serif;
 	font-size: 13px;
+	/*added by Ramesh*/
+	padding-top: 130px !important;
 }
 a, a:focus, a:hover, a:active {
 	outline: 0 !important;
@@ -3047,6 +3049,227 @@ a:hover .header-profile-image {
 	margin-right: 40px;
 	padding-bottom: 0;
 	padding-top: 0;
+}
+
+/********************LOGIN PAGE*********************/
+#app {
+	height: auto;
+	min-height: 100%;
+	overflow: hidden;
+	position: relative;
+	width: 100%;
+}
+
+*::-moz-selection {
+	background: #5f8295 none repeat scroll 0 0;
+	color: #ffffff;
+	text-shadow: none;
+}
+.main-login {
+	margin-top: 0;
+	position: relative;
+}
+
+.main-login .box-login, .main-login .box-forgot, .main-login .box-register {
+	background: #ffffff none repeat scroll 0 0;
+	border-radius: 5px;
+	margin: 15px 0 65px;
+	overflow: hidden;
+	padding: 15px;
+}
+fieldset {
+	background: #ffffff none repeat scroll 0 0;
+	border: 1px solid #e6e8e8;
+	border-radius: 5px;
+	margin: 20px 0;
+	padding: 25px;
+	position: relative;
+}
+fieldset legend {
+	background: inherit;
+	border: medium none;
+	color: #007aff;
+	font-family: "Lato",sans-serif;
+	font-size: 15px;
+	font-weight: 400;
+	left: 10px;
+	padding: 0 10px;
+	position: absolute;
+	top: -12px;
+	width: auto;
+}
+legend {
+	color: inherit;
+	font-size: 16px;
+	font-weight: 300;
+}
+fieldset .form-group {
+	margin-left: 0;
+	margin-right: 0;
+}
+.form-group {
+	position: relative;
+}
+span.input-icon, span.input-help {
+	display: block;
+	position: relative;
+}
+.input-icon > input {
+	padding-left: 30px;
+	padding-right: 6px;
+}
+textarea, select, input[type="text"], input[type="password"], input[type="datetime"], input[type="datetime-local"], input[type="date"], input[type="month"], input[type="time"], input[type="week"], input[type="number"], input[type="email"], input[type="url"], input[type="search"], input[type="tel"], input[type="color"] {
+	-moz-appearance: none;
+	background-color: #ffffff;
+	background-image: none;
+	border: 1px solid #c8c7cc;
+	border-radius: 0;
+	box-shadow: none;
+	color: #5b5b60;
+	font-family: inherit;
+	font-size: 14px;
+	line-height: 1.2;
+	padding: 5px 4px;
+	transition: all 300ms ease-in-out 0s;
+}
+.form-control {
+	color: inherit;
+}
+.input-icon > [class*="fa-"], .input-icon > [class*="ti-"] {
+	bottom: 0;
+	color: #007aff;
+	display: inline-block;
+	left: 5px;
+	line-height: 35px;
+	padding: 0 3px;
+	position: absolute;
+	top: -1px;
+	z-index: 2;
+}
+.main-login .form-actions::before, .main-login .form-actions::after {
+	content: "";
+	display: table;
+	line-height: 0;
+}
+.main-login .form-actions::after {
+	clear: both;
+}
+.main-login .form-actions::before, .main-login .form-actions::after {
+	content: "";
+	display: table;
+	line-height: 0;
+}
+fieldset .form-group {
+	margin-left: 0;
+	margin-right: 0;
+}
+.main-login a.forgot {
+	color: #909090;
+	font-size: 12px;
+	position: absolute;
+	right: 10px;
+	text-shadow: 1px 1px 1px #ffffff;
+	top: 9px;
+}
+a {
+	color: #007aff;
+}
+a, a:focus, a:hover, a:active {
+	cursor: pointer;
+	outline: 0 none;
+	text-decoration: none;
+}
+.main-login .form-actions::after {
+	clear: both;
+}
+.main-login .form-actions {
+	display: block;
+	margin-top: 15px;
+	padding-top: 10px;
+}
+.clip-check {
+	margin-bottom: 10px;
+	margin-top: 10px;
+	padding-left: 0;
+}
+.clip-check input[type="checkbox"] {
+	display: none;
+}
+input[type="radio"], input[type="checkbox"] {
+	box-sizing: border-box;
+	cursor: pointer;
+	line-height: normal;
+}
+.clip-check label::before {
+	background-color: #ffffff;
+	border: 1px solid #c8c7cc;
+	border-radius: 0;
+	content: "";
+	display: inline-block;
+	height: 20px;
+	left: 0;
+	margin-right: 10px;
+	position: absolute;
+	top: 1px;
+	transition: border 0.2s linear 0s, color 0.2s linear 0s;
+	width: 20px;
+}
+.clip-check label::after {
+	display: inline-block;
+	font-size: 11px;
+	height: 19px;
+	left: 4px;
+	position: absolute;
+	top: -1px;
+	transition: border 0.2s linear 0s, color 0.2s linear 0s;
+	width: 19px;
+}
+.main-login label {
+	color: #7f7f7f;
+	font-size: 14px;
+	margin-top: 5px;
+}
+.clip-check label {
+	cursor: pointer;
+	display: inline-block;
+	font-size: 13px;
+	line-height: 23px;
+	margin-right: 15px;
+	padding-left: 30px;
+	position: relative;
+	transition: border 0.2s linear 0s, color 0.2s linear 0s;
+	white-space: nowrap;
+}
+label {
+	color: #858585;
+	font-weight: normal;
+}
+.btn::after {
+	content: "";
+	position: absolute;
+	transition: all 0.3s ease 0s;
+	z-index: -1;
+}
+.btn-primary {
+	background-color: #007aff;
+	border-color: #007aff;
+	color: #ffffff;
+}
+.btn {
+	background-image: none;
+	box-shadow: none;
+	outline: medium none;
+	position: relative;
+	transition: all 0.3s ease 0s;
+}
+button {
+	outline: 0 none;
+}
+.main-login .new-account {
+	border-top: 1px dotted #eeeeee;
+	display: block;
+	margin-top: 15px;
+	padding-top: 10px;
 }
 
 /***Custom css by Ramesh***/
