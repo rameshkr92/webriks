@@ -7,14 +7,22 @@
 /* ---------------------------------------------------------------------- */
 /*	Basic Elements & Classes
 /* ---------------------------------------------------------------------- */
-body {
+/*body {
 	color: #888888;
 	direction: ltr;
 	font-family: 'Open+Sans', sans-serif;
 	font-size: 13px;
-	/*added by Ramesh*/
+}*/
+/*added by Ramesh*/
+body {
+	color: #8e8e93;
+	direction: ltr;
+	/*font-family: Helvetica,Arial,sans-serif;*/
+	font-family: 'Open+Sans',Arial, sans-serif;
+	font-size: 13px;
 	padding-top: 130px !important;
 }
+
 a, a:focus, a:hover, a:active {
 	outline: 0 !important;
 	text-decoration: none;
@@ -3272,4 +3280,100 @@ button {
 	padding-top: 10px;
 }
 
+.input-icon > input {
+	padding-left: 30px;
+	padding-right: 6px;
+}
+
+.clip-radio {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 0;
+}
+.clip-radio input[type="radio"] {
+    display: none;
+}
+
+input[type="radio"], input[type="checkbox"] {
+    box-sizing: border-box;
+    cursor: pointer;
+    line-height: normal;
+}
+
+.clip-radio label::before {
+    background-color: #ffffff;
+    border: 1px solid #d0d0d0;
+    border-radius: 99px;
+    bottom: 2px;
+    content: "";
+    display: inline-block;
+    height: 20px;
+    left: 0;
+    margin-right: 10px;
+    position: absolute;
+    transition: all 0.3s cubic-bezier(0.455, 0.03, 0.215, 1.33) 0s;
+    width: 20px;
+}
+.clip-radio label::after {
+    border: 1px solid #c8c7cc;
+    border-radius: 99px;
+    bottom: 2px;
+    content: "";
+    display: inline-block;
+    height: 20px;
+    left: 0;
+    margin-right: 10px;
+    position: absolute;
+    transition: all 0.3s cubic-bezier(0.455, 0.03, 0.215, 1.33) 0s;
+    width: 20px;
+}
+.clip-radio label {
+    cursor: pointer;
+    display: inline-block;
+    font-size: 13px;
+    line-height: 23px;
+    margin-bottom: 6px;
+    margin-right: 15px;
+    padding-left: 25px;
+    position: relative;
+}
+.clip-check {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    padding-left: 0;
+}
+.clip-check.check-primary input[type="checkbox"]:checked + label::before {
+    border-color: #007aff;
+}
+.clip-check input[type="checkbox"]:checked + label::before {
+    border-width: 10px;
+}
+
+.clip-check input[type="checkbox"]:checked + label::after {
+    color: #fff;
+    content: "";
+    font-family: "FontAwesome";
+}
+
+.clip-radio.radio-primary input[type="radio"]:checked + label::before {
+    background: #007aff none repeat scroll 0 0;
+}
+.clip-radio input[type="radio"]:checked + label::before {
+    background: #f8f8f8 none repeat scroll 0 0;
+    border-color: #ffffff;
+    border-width: 6px;
+}
+
+
+
+/*error*/
+  .error-text {
+      display: none;
+  }
+.has-error .help-block.error-text {
+    display: block;
+}
+.has-error .help-inline.error-text {
+    display: inline;
+}
 /***Custom css by Ramesh***/

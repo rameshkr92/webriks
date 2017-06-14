@@ -37,6 +37,8 @@ exports.signup = function (req, res) {
             // Remove sensitive data before login
             user.password = undefined;
             user.salt = undefined;
+            
+            res.json(user);
             //send mail to registered user mail start here
             var httpTransport = 'http://';
             if (config.secure && config.secure.ssl === true) {
@@ -70,7 +72,6 @@ exports.signup = function (req, res) {
                 });
             });
             //send mail to registered user mail end here
-            res.json(user);
         });
     }).catch(function(err){
         // Remove sensitive data before login
