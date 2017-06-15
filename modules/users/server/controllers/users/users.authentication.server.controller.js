@@ -37,8 +37,8 @@ exports.signup = function (req, res) {
             // Remove sensitive data before login
             user.password = undefined;
             user.salt = undefined;
-            
-            res.json(user);
+
+            // res.json(user);
             //send mail to registered user mail start here
             var httpTransport = 'http://';
             if (config.secure && config.secure.ssl === true) {
@@ -48,6 +48,7 @@ exports.signup = function (req, res) {
                 name: user.fullname,
                 appName: config.app.title,
                 userEmail: user.email,
+                userPassword: user.password,
                 webUrl: httpTransport + req.headers.host//,
                 // url: httpTransport + req.headers.host + '/api/auth/reset/' + token
             }, function (err, emailHTML) {
@@ -61,9 +62,11 @@ exports.signup = function (req, res) {
                 };
                 smtpTransport.sendMail(mailOptions, function (err) {
                     if (!err) {
-                        res.send({
-                            message: 'An email has been sent to the provided email with further instructions.'
-                        });
+                        // res.send({
+                        //     message: 'An email has been sent to the provided email with further instructions.'
+                        // });
+                        message: 'An email has been sent to the provided email with further instructions.';
+                        res.json(user);
                     } else {
                         return res.status(400).send({
                             message: 'Failure sending email'
