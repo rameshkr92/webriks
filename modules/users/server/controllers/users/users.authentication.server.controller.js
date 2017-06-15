@@ -26,9 +26,10 @@ exports.signup = function (req, res) {
     // Init Variables
     var user = db.User.build(req.body);
     var message = null;
-
+// console.log(user); return false;
     // Add missing user fields
     user.provider = 'local';
+    user.ipAddress = req.ip;
     user.salt = user.makeSalt();
     user.password = user.encryptPassword(req.body.password, user.salt);
     // Then save the user
