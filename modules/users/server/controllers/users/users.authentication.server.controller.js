@@ -9,7 +9,8 @@ var path = require('path'),
     db = require(path.resolve('./config/lib/sequelize'));
 var nodemailer = require('nodemailer');
 var smtpTransport = nodemailer.createTransport(config.mailer.options);
-
+var errorHandler = require(path.resolve('./modules/core/server/controllers/errors.server.controller'));
+var crypto = require('crypto');
 // URLs for which user can't be redirected on signin
 var noReturnUrls = [
     '/authentication/signin',
@@ -26,10 +27,14 @@ exports.signup = function (req, res) {
     // Init Variables
     var user = db.User.build(req.body);
     var message = null;
-// console.log(user); return false;
+// console.log(user.password); return false;
+var upass = user.password;
     // Add missing user fields
     user.provider = 'local';
     user.ipAddress = req.ip;
+    user.isVerified = 'no';
+    user.isActive = 'no';
+    user.activationSecret = crypto.randomBytes(32).toString('hex');
     user.salt = user.makeSalt();
     user.password = user.encryptPassword(req.body.password, user.salt);
     // Then save the user
@@ -49,7 +54,7 @@ exports.signup = function (req, res) {
                 name: user.fullname,
                 appName: config.app.title,
                 userEmail: user.email,
-                userPassword: user.password,
+                userPassword: upass,
                 webUrl: httpTransport + req.headers.host//,
                 // url: httpTransport + req.headers.host + '/api/auth/reset/' + token
             }, function (err, emailHTML) {
@@ -78,14 +83,18 @@ exports.signup = function (req, res) {
             //send mail to registered user mail end here
         });
     }).catch(function(err){
+        // console.log(errorHandler.getErrorMessage(err)); return false;
         // Remove sensitive data before login
         user.password = undefined;
         user.salt = undefined;
-
-        res.render('/authentication/signup',{
-            message: message,
+        return res.status(422).send({
+            message: errorHandler.getErrorMessage(err),
             user: user
         });
+        // res.render('/authentication/signup',{
+        //     message: message,
+        //     user: user
+        // });
     });
 };
 

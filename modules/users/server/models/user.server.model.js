@@ -9,8 +9,27 @@ var crypto = require('crypto');
 module.exports = function(sequelize, DataTypes) {
     var User = sequelize.define('User', {
             fullname: DataTypes.STRING,
-            email: DataTypes.STRING,
-            username: DataTypes.STRING,
+            // email: DataTypes.STRING,
+            email: {
+                type: DataTypes.STRING,
+                allowNull: false,
+                validate: {
+                    isEmail: true
+                },
+                unique: {
+                    args: true,
+                    msg: 'Email address already in use!'
+                }
+            },
+            username: {
+                type: DataTypes.STRING,
+                allowNull: false,
+                // isUnique: true
+                unique: {
+                    args: true,
+                    msg: 'Username already in use!'
+                }
+            },
             password: DataTypes.STRING,
             provider: DataTypes.STRING,
             salt: DataTypes.STRING,
@@ -21,6 +40,17 @@ module.exports = function(sequelize, DataTypes) {
             city: DataTypes.STRING,
             zipcode: DataTypes.STRING,
             gender: DataTypes.STRING,
+            isVerified: {
+                type: DataTypes.ENUM('yes', 'no'),
+                allowNull: false,
+                defaultValue: 'no'
+            },
+            isActive: {
+                type: DataTypes.ENUM('yes', 'no','suspended'),
+                allowNull: false,
+                defaultValue: 'no'
+            },
+            activationSecret: DataTypes.STRING,
             phoneNumber: DataTypes.STRING,
             facebookUserId: DataTypes.INTEGER,
             twitterUserId: DataTypes.INTEGER,
