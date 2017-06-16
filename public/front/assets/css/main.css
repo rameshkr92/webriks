@@ -20,7 +20,10 @@ body {
 	/*font-family: Helvetica,Arial,sans-serif;*/
 	font-family: 'Open+Sans',Arial, sans-serif;
 	font-size: 13px;
-	padding-top: 130px !important;
+}
+
+.fixed-header{
+    padding-top: 130px !important;
 }
 
 a, a:focus, a:hover, a:active {
@@ -3377,17 +3380,18 @@ input[type="radio"], input[type="checkbox"] {
 
 /*******LEFT MENU******/
 .nav-side-menu {
-    overflow: auto;
+    background-color: #2e353d;
+    color: #e1ffff;
     font-family: verdana;
     font-size: 12px;
     font-weight: 200;
-    background-color: #2e353d;
-    position: fixed;
-    top: 0px;
-    width: 300px;
     height: 100%;
-    color: #e1ffff;
+    overflow: auto;
+    position: relative;
+    top: 0;
+    width: 300px;
 }
+
 .nav-side-menu .brand {
     background-color: #23282e;
     line-height: 50px;
