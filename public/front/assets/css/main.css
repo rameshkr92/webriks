@@ -20,11 +20,12 @@ body {
 	/*font-family: Helvetica,Arial,sans-serif;*/
 	font-family: 'Open+Sans',Arial, sans-serif;
 	font-size: 13px;
+	/*padding-top: 130px !important;*/
 }
 
-.fixed-header{
-    padding-top: 130px !important;
-}
+/*.fixed-header{*/
+    /*padding-top: 130px !important;*/
+/*}*/
 
 a, a:focus, a:hover, a:active {
 	outline: 0 !important;

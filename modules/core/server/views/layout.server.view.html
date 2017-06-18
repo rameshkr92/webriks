@@ -3,54 +3,527 @@
 <!--[if IE 9]><html class="ie9" lang="en" ng-strict-di ><![endif]-->
 <!--[if !IE]><!-->
 <head>
-  <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
-  <meta charset="utf-8">
-  <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
-  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
-  <base href="/">
-  <title>{{title}}</title>
-  <meta name="description" content="{{description}}">
-  <meta name="fragment" content="!">
+    <!--[if IE]><meta http-equiv='X-UA-Compatible' content="IE=edge,IE=9,IE=8,chrome=1" /><![endif]-->
+    <meta charset="utf-8">
+    <!--<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+    <base href="/">
+    <title>{{title}}</title>
+    <meta name="description" content="{{description}}">
+    <meta name="fragment" content="!">
 
-  <!-- Apple META -->
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
+    <!-- Apple META -->
+    <meta name="apple-mobile-web-app-capable" content="yes">
+    <meta name="apple-mobile-web-app-status-bar-style" content="black">
 
-  <!-- Facebook META -->
-  <meta property="fb:app_id" content="{{facebookAppId}}">
-  <meta property="og:site_name" content="{{title}}">
-  <meta property="og:title" content="{{title}}">
-  <meta property="og:description" content="{{description}}">
-  <meta property="og:url" content="{{url}}">
-  <meta property="og:image" content="{{logo}}">
-  <meta property="og:type" content="website">
-  <!-- Twitter META -->
-  <meta name="twitter:title" content="{{title}}">
-  <meta name="twitter:description" content="{{description}}">
-  <meta name="twitter:url" content="{{url}}">
-  <meta name="twitter:image" content="{{logo}}">
-  <!-- Fav Icon -->
-  <link href="{{favicon}}" rel="shortcut icon" type="image/x-icon">
+    <!-- Facebook META -->
+    <meta property="fb:app_id" content="{{facebookAppId}}">
+    <meta property="og:site_name" content="{{title}}">
+    <meta property="og:title" content="{{title}}">
+    <meta property="og:description" content="{{description}}">
+    <meta property="og:url" content="{{url}}">
+    <meta property="og:image" content="{{logo}}">
+    <meta property="og:type" content="website">
+    <!-- Twitter META -->
+    <meta name="twitter:title" content="{{title}}">
+    <meta name="twitter:description" content="{{description}}">
+    <meta name="twitter:url" content="{{url}}">
+    <meta name="twitter:image" content="{{logo}}">
+    <!-- Fav Icon -->
+    <link href="{{favicon}}" rel="shortcut icon" type="image/x-icon">
 
-  <!-- start: MAIN CSS -->
-  <link href="front/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
-  <link rel="stylesheet" href="front/assets/plugins/font-awesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="front/assets/fonts/style.css">
-  <link rel="stylesheet" href="front/assets/plugins/animate.css/animate.min.css">
-  <link rel="stylesheet" href="front/assets/css/main.css">
-  <link rel="stylesheet" href="front/assets/css/main-responsive.css">
-  <link rel="stylesheet" href="front/assets/css/theme_blue.css" type="text/css" id="skin_color">
-  <!-- end: MAIN CSS -->
+    <!-- start: MAIN CSS -->
+    <link href="front/assets/plugins/bootstrap/css/bootstrap.min.css" rel="stylesheet" media="screen">
+    <link rel="stylesheet" href="front/assets/plugins/font-awesome/css/font-awesome.min.css">
+    <link rel="stylesheet" href="front/assets/fonts/style.css">
+    <link rel="stylesheet" href="front/assets/plugins/animate.css/animate.min.css">
+    <link rel="stylesheet" href="front/assets/css/main.css">
+    <link rel="stylesheet" href="front/assets/css/main-responsive.css">
+    <link rel="stylesheet" href="front/assets/css/theme_blue.css" type="text/css" id="skin_color">
+    <!-- end: MAIN CSS -->
 
-  <script src="front/assets/plugins/jQuery-lib/2.0.3/jquery.min.js"></script>
-  <!-- start: HTML5SHIV FOR IE8 -->
-  <!-- Application CSS Files -->
-  <!--{% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}-->
+    <script src="front/assets/plugins/jQuery-lib/2.0.3/jquery.min.js"></script>
+    <!-- start: HTML5SHIV FOR IE8 -->
+    <!-- Application CSS Files -->
+    <!--{% for cssFile in cssFiles %}<link rel="stylesheet" href="{{cssFile}}">{% endfor %}-->
 </head>
 
-<body class="fixed-header ng-cloak">
+<body class="ng-cloak">
 <!-- start: HEADER -->
-<header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top"></header>
+<!--<header ng-include="'/modules/core/client/views/header.client.view.html'" class="navbar navbar-fixed-top"></header>-->
+<div ng-controller="HeaderController">
+    <div id="slidingbar-area">
+        <div id="slidingbar">
+            <!-- start: SLIDING BAR FIRST COLUMN -->
+            <div class="col-md-4 col-sm-4">
+                <h2>About Clip-One</h2>
+                <p>
+                    Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean massa.
+                    Nulla consequat massa quis enim.
+                    Donec pede justo, fringilla vel, aliquet nec, vulputate eget, arcu.
+                    In enim justo, rhoncus ut, imperdiet a, venenatis vitae, justo.
+                </p>
+            </div>
+            <!-- end: SLIDING BAR FIRST COLUMN -->
+            <!-- start: SLIDING BAR SECOND COLUMN -->
+            <div class="col-md-4 col-sm-4">
+                <h2>Recent Works</h2>
+                <div class="blog-photo-stream margin-bottom-30">
+                    <ul class="list-unstyled">
+                        <li>
+                            <a href="#"><img alt="" src="front/assets/images/image01.jpg"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img alt="" src="front/assets/images/image02.jpg"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img alt="" src="front/assets/images/image03.jpg"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img alt="" src="front/assets/images/image04.jpg"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img alt="" src="front/assets/images/image05.jpg"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img alt="" src="front/assets/images/image06.jpg"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img alt="" src="front/assets/images/image07.jpg"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img alt="" src="front/assets/images/image08.jpg"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img alt="" src="front/assets/images/image09.jpg"></a>
+                        </li>
+                        <li>
+                            <a href="#"><img alt="" src="front/assets/images/image10.jpg"></a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <!-- end: SLIDING BAR SECOND COLUMN -->
+            <!-- start: SLIDING BAR THIRD COLUMN -->
+            <div class="col-md-4 col-sm-4">
+                <h2>Contact Us</h2>
+                <address class="margin-bottom-40">
+                    Clip-One
+                    <br>
+                    12345 Street Name, City Name, United States
+                    <br>
+                    P: (641)-734-4763
+                    <br>
+                    Email:
+                    <a href="#">
+                        info@example.com
+                    </a>
+                </address>
+            </div>
+            <!-- end: SLIDING BAR THIRD COLUMN -->
+        </div>
+        <!-- start: SLIDING BAR TOGGLE BUTTON -->
+        <a href="#" class="sb_toggle">
+        </a>
+        <!-- end: SLIDING BAR TOGGLE BUTTON -->
+    </div>
+    <!-- end: SLIDING BAR -->
+    <!-- start: TOP BAR -->
+    <div class="clearfix " id="topbar">
+        <div class="container">
+            <div class="row">
+                <div class="col-sm-4">
+                    <!-- start: TOP BAR CALL US -->
+                    <div class="callus">
+                        Call Us: (641)-734-4763 - Mail:
+                        <a href="mailto:info@example.com">
+                            info@example.com
+                        </a>
+                    </div>
+                    <!-- end: TOP BAR CALL US -->
+                </div>
+                <div class="col-sm-4">
+                    <!-- start: TOP BAR SOCIAL ICONS -->
+                    <div class="social-icons">
+                        <ul>
+                            <li class="social-twitter tooltips" data-original-title="Twitter" data-placement="bottom">
+                                <a target="_blank" href="http://www.twitter.com/">
+                                    Twitter
+                                </a>
+                            </li>
+                            <li class="social-dribbble tooltips" data-original-title="Dribbble" data-placement="bottom">
+                                <a target="_blank" href="http://dribbble.com/">
+                                    Dribbble
+                                </a>
+                            </li>
+                            <li class="social-facebook tooltips" data-original-title="Facebook" data-placement="bottom">
+                                <a target="_blank" href="http://facebook.com/">
+                                    Facebook
+                                </a>
+                            </li>
+                            <li class="social-google tooltips" data-original-title="Google" data-placement="bottom">
+                                <a target="_blank" href="http://google.com/">
+                                    Google+
+                                </a>
+                            </li>
+                            <li class="social-linkedin tooltips" data-original-title="LinkedIn" data-placement="bottom">
+                                <a target="_blank" href="http://linkedin.com/">
+                                    LinkedIn
+                                </a>
+                            </li>
+                            <li class="social-youtube tooltips" data-original-title="YouTube" data-placement="bottom">
+                                <a target="_blank" href="http://youtube.com/">
+                                    YouTube
+                                </a>
+                            </li>
+                            <li class="social-rss tooltips" data-original-title="RSS" data-placement="bottom">
+                                <a target="_blank" href="#" >
+                                    RSS
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                    <!-- end: TOP BAR SOCIAL ICONS -->
+                </div>
+
+                <div class="col-sm-4">
+                    <div class="social-icons1 profile-header">
+                        <nav class="collapse navbar-collapse" collapse="!isCollapsed" role="navigation">
+                            <ul class="nav navbar-nav navbar-right" ng-hide="authentication.user">
+                                <li ui-sref-active="active" class="local-signup tooltips top-header-auth" data-original-title="Sign Up" data-placement="bottom">
+                                    <a ui-sref="authentication.signup">Sign Up</a>
+                                </li>
+                                <li class="divider-vertical"></li>
+                                <li ui-sref-active="active" class="local-signin tooltips top-header-auth" data-original-title="Sign In" data-placement="bottom">
+                                    <a ui-sref="authentication.signin">Sign In</a>
+                                </li>
+                            </ul>
+                            <ul class="nav navbar-nav navbar-right" ng-show="authentication.user">
+                                <li class="dropdown top-header-auth" dropdown>
+                                    <a class="dropdown-toggle user-header-dropdown-toggle" dropdown-toggle role="button">
+                                        <img ng-src="{{authentication.user.avatar}}" alt="{{authentication.user.username}}" class="header-profile-image" />
+                                        <span ng-bind="authentication.user.username"></span> <b class="caret"></b>
+                                    </a>
+                                    <ul class="dropdown-menu" role="menu">
+                                        <!--<li ui-sref-active="active">-->
+                                        <!--<a ui-sref="settings.profile">Profile</a>-->
+                                        <!--</li>-->
+                                        <li ui-sref-active="active">
+                                            <a ui-sref="settings.edit-user">Edit Profile</a>
+                                        </li>
+                                        <li ui-sref-active="active">
+                                            <a ui-sref="settings.picture">Change Profile Picture</a>
+                                        </li>
+                                        <li ui-sref-active="active" ng-show="authentication.user.provider === 'local'">
+                                            <a ui-sref="settings.password">Change Password</a>
+                                        </li>
+                                        <li ui-sref-active="active">
+                                            <a ui-sref="settings.accounts">Manage Social Accounts</a>
+                                        </li>
+                                        <li class="divider"></li>
+                                        <li>
+                                            <a href="/api/auth/signout" target="_self">Signout</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </nav>
+                    </div>
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <!-- end: TOP BAR -->
+    <div role="navigation" class="navbar navbar-default navbar-fixed-top space-top">
+        <!-- start: TOP NAVIGATION CONTAINER -->
+        <div class="container">
+            <div class="navbar-header">
+                <!-- start: RESPONSIVE MENU TOGGLER -->
+                <button data-target=".navbar-collapse" data-toggle="collapse" class="navbar-toggle" type="button">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <!-- end: RESPONSIVE MENU TOGGLER -->
+                <!-- start: LOGO -->
+                <a ui-sref="home" class="navbar-brand" >
+                    CLIP<i class="clip-clip"></i>ONE
+                </a>
+                <!-- end: LOGO -->
+            </div>
+            <div class="navbar-collapse collapse">
+                <ul class="nav navbar-nav navbar-right">
+                    <li class="active">
+                        <a ui-sref="home">
+                            Home
+                        </a>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown">
+                            Pages <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="pages_about.html">
+                                    About Us
+                                </a>
+                            </li>
+                            <li>
+                                <a href="pages_team.html">
+                                    Team
+                                </a>
+                            </li>
+                            <li>
+                                <a href="pages_services.html">
+                                    Services
+                                </a>
+                            </li>
+                            <li>
+                                <a href="pages_careers.html">
+                                    Careers
+                                </a>
+                            </li>
+                            <li>
+                                <a href="pages_faq.html">
+                                    Faq
+                                </a>
+                            </li>
+                            <li>
+                                <a ui-sref="contact-us">
+                                    Contact Us
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown mega-menu">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown">
+                            Features <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <!-- start: MEGA MENU CONTENT -->
+                                <div class="mega-menu-content">
+                                    <div class="row">
+                                        <div class="col-sm-3">
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <span class="mega-menu-sub-title">Main Features</span>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <a href="features_icons.html">
+                                                                Icons
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="features_buttons.html">
+                                                                Buttons
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="features_animations.html">
+                                                                Animations
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="features_typograpy.html">
+                                                                Typograpy
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="features_grid_system.html">
+                                                                Grid System
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <span class="mega-menu-sub-title">Headers and Footers</span>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <a href="index-2.html">
+                                                                Header Version 1
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index_header_2.html">
+                                                                Header Version 2
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index_header_3.html">
+                                                                Header Version 3
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index-2.html#footer">
+                                                                Footer Version 1
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="index_footer_2.html#footer">
+                                                                Footer Version 2
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <span class="mega-menu-sub-title">Extra</span>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <a href="extra_search_result.html">
+                                                                Search Result
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="extra_pricing_table.html">
+                                                                Pricing Tables
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="extra_404.html">
+                                                                404
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="extra_500.html">
+                                                                500
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                        <div class="col-sm-3">
+                                            <ul class="sub-menu">
+                                                <li>
+                                                    <span class="mega-menu-sub-title">Blog</span>
+                                                    <ul class="sub-menu">
+                                                        <li>
+                                                            <a href="blog_page.html">
+                                                                Blog Page
+                                                            </a>
+                                                        </li>
+                                                        <li>
+                                                            <a href="blog_post.html">
+                                                                Blog Post
+                                                            </a>
+                                                        </li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </div>
+                                    </div>
+                                </div>
+                                <!-- end: MEGA MENU CONTENT -->
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="dropdown">
+                        <a class="dropdown-toggle" href="#" data-toggle="dropdown" data-hover="dropdown">
+                            Portfolio <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu">
+                            <li>
+                                <a href="portfolio_example1.html">
+                                    4 Columns Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="portfolio_example2.html">
+                                    3 Columns Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="portfolio_example3.html">
+                                    2 Columns Portfolio
+                                </a>
+                            </li>
+                            <li>
+                                <a href="portfolio_item.html">
+                                    Portfolio Item
+                                </a>
+                            </li>
+                        </ul>
+                    </li>
+                    <!--<li>-->
+                    <!--<a target="_blank" href="http://www.cliptheme.com/preview/admin/clip-one/index.html">-->
+                    <!--Admin Theme-->
+                    <!--</a>-->
+                    <!--</li>-->
+                    <li class="user-menu" ui-sref-active="active" ng-hide="authentication.user">
+                        <a ui-sref="authentication.signup">Sign Up</a>
+                    </li>
+                    <li class="user-menu" ui-sref-active="active" ng-hide="authentication.user">
+                        <a ui-sref="authentication.signin">Sign In</a>
+                    </li>
+                    <li ng-show="authentication.user" class="dropdown top-header-auth user-menu" dropdown>
+                        <a class="dropdown-toggle user-header-dropdown-toggle" dropdown-toggle role="button">
+                            <img ng-src="{{authentication.user.avatar}}" alt="{{authentication.user.username}}" class="header-profile-image" />
+                            <span ng-bind="authentication.user.username"></span> <b class="caret"></b>
+                        </a>
+                        <ul class="dropdown-menu" role="menu">
+                            <!--<li ui-sref-active="active">-->
+                            <!--<a ui-sref="settings.profile">Profile</a>-->
+                            <!--</li>-->
+                            <li ui-sref-active="active">
+                                <a ui-sref="settings.edit-user">Edit Profile</a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a ui-sref="settings.picture">Change Profile Picture</a>
+                            </li>
+                            <li ui-sref-active="active" ng-show="authentication.user.provider === 'local'">
+                                <a ui-sref="settings.password">Change Password</a>
+                            </li>
+                            <li ui-sref-active="active">
+                                <a ui-sref="settings.accounts">Manage Social Accounts</a>
+                            </li>
+                            <li class="divider"></li>
+                            <li>
+                                <a href="/api/auth/signout" target="_self">Signout</a>
+                            </li>
+                        </ul>
+                    </li>
+                    <li class="menu-search">
+                        <!-- start: SEARCH BUTTON -->
+                        <a href="#" data-placement="bottom" data-toggle="popover">
+                            <i class="clip-search-3"></i>
+                        </a>
+                        <!-- end: SEARCH BUTTON -->
+                        <!-- start: SEARCH POPOVER -->
+                        <div class="popover bottom search-box">
+                            <div class="arrow"></div>
+                            <div class="popover-content">
+                                <!-- start: SEARCH FORM -->
+                                <form class="" id="searchform" action="#">
+                                    <div class="input-group">
+                                        <input type="text" class="form-control" placeholder="Search">
+                                        <span class="input-group-btn">
+													<button class="btn btn-main-color btn-squared" type="button">
+														<i class="clip-search-3"></i>
+													</button> </span>
+                                    </div>
+                                </form>
+                                <!-- end: SEARCH FORM -->
+                            </div>
+                        </div>
+                        <!-- end: SEARCH POPOVER -->
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <!-- end: TOP NAVIGATION CONTAINER -->
+    </div>
+</div>
 <!-- end: HEADER -->
 <!-- start: MAIN CONTAINER -->
 {% block content %}{% endblock %}
@@ -81,5 +554,11 @@
 <script src="front/assets/plugins/jquery-cookie/jquery.cookie.js"></script>
 <script src="front/assets/js/main.js"></script>
 <!-- end: MAIN JAVASCRIPTS -->
+<script>
+    jQuery(document).ready(function() {
+        Main.init();
+//        $('.navbar-default').removeAttr('style');
+    });
+</script>
 </body>
 </html>
