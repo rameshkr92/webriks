@@ -486,9 +486,11 @@ var Main = function() {
             scroll_top_button.fadeIn();
         }
         else if(scroll_top > 40){
+            // body.addClass('sticky-header');
             $('.user-menu').show();
         }
         else {
+            // body.removeClass('sticky-header');
             $('.user-menu').hide();
             // body.removeClass('fixed-header');
             // $('.sub-header').show();
