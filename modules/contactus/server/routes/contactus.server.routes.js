@@ -3,8 +3,8 @@
 /**
  * Module dependencies.
  */
-var articlesPolicy = require('../policies/articles.server.policy'),
-  articles = require('../controllers/articles.server.controller');
+var articlesPolicy = require('../policies/contactus.server.policy'),
+  articles = require('../controllers/contactus.server.controller');
 
 module.exports = function (app) {
   // Articles collection routes
